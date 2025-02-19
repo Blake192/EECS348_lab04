@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EECS 348 Lab Four - Practice 2 - CSS Update Page</title>
+    <h1>EECS 348 Lab Four - Practice 2 - CSS Update Page</h1>
+</head>
+
+<style>
+    #alter {
+        border-style: solid;
+        border-width: 5px;
+    }
+</style>
+
+<body>
+    <div id="alter">
+
+        Paragraph to be altered.
+
+    </div>
+
+    <script type="text/javascript">
+        function applyChanges() {
+          // get values for border color and width from input fields
+          var borderRed = document.getElementById("borderRed").value;
+          var borderGreen = document.getElementById("borderGreen").value;
+          var borderBlue = document.getElementById("borderBlue").value;
+          var borderWidth = document.getElementById("borderWidth").value;
+        
+          // get values for background color from input fields
+          var backgroundRed = document.getElementById("backgroundRed").value;
+          var backgroundGreen = document.getElementById("backgroundGreen").value;
+          var backgroundBlue = document.getElementById("backgroundBlue").value;
+        
+          // create css rgb strings so it can parse
+          var borderColor = "rgb(" + borderRed + ", " + borderGreen + ", " + borderBlue + ")";
+          var backgroundColor = "rgb(" + backgroundRed + ", " + backgroundGreen + ", " + backgroundBlue + ")";
+        
+          // Get the element to be altered
+          var alterDiv = document.getElementById("alter");
+        
+          // Apply the new styles
+          alterDiv.style.borderColor = borderColor;
+          alterDiv.style.borderWidth = borderWidth + "px"; // Ensure width has the 'px' unit
+          alterDiv.style.backgroundColor = backgroundColor;
+        }
+    </script>
+   
+    Border R(0-255): <input type="text" id="borderRed" value=""> <br>
+    Border G(0-255): <input type="text" id="borderGreen" value=""> <br>
+    Border B(0-255): <input type="text" id="borderBlue" value=""> <br>
+    Border Width: <input type="text" id="borderWidth" value=""> <br>
+    Background R(0-255): <input type="text" id="backgroundRed" value=""> <br>
+    Background G(0-255): <input type="text" id="backgroundGreen" value=""> <br>
+    Background B(0-255): <input type="text" id="backgroundBlue" value=""> <br>
+   
+    <button onclick="applyChanges()">Change the color!</button> <br>
+
+
+</body>
+
+
+
+</html>
